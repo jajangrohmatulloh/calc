@@ -11,7 +11,7 @@ body {
 
 .container {
     min-width: 200px;
-    height: 100vh;
+    height: 100%;
     background-color: #1F1F1F;
     padding: 2px;
     box-sizing: border-box;
