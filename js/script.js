@@ -93,8 +93,10 @@ function operators(e) {
         input.previousElementSibling.innerHTML = '/';
         operand1 = parseFloat(input.textContent);
         input.innerHTML = '0';
-    } else if (e.target.value == 'sqrt') {
+    } else if (e.target.value == 'squared') {
         input.innerHTML = Math.pow(input.textContent, 2);
+    } else if (e.target.value == 'sqrt') {
+        input.innerHTML = Math.sqrt(input.textContent);
     } else if (e.target.value == 'divide') {
         input.innerHTML = 1 / input.textContent;
     } else if (e.target.textContent == '%') {
