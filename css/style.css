@@ -1,237 +1,252 @@
 * {
-    font-size: 18px;
+  font-size: 18px;
+  box-sizing: border-box;
 }
+
 body {
-    color: white;
-    padding: 0;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
+  color: white;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .container {
-    min-width: 200px;
-    height: 100%;
-    background-color: #1F1F1F;
-    padding: 2px;
-    box-sizing: border-box;
+  min-width: 200px;
+  height: 100%;
+  background-color: #1f1f1f;
+  padding: 2px;
+  box-sizing: border-box;
 }
 
 .toggle {
-    height: 13px;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    cursor: pointer;
+  height: 13px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
 }
+
 .toggle span {
-    background-color: white;
-    width: 20px;
-    height: .5px;
-    transform-origin: 0% 0%;
-    transition: all 1s;
+  background-color: white;
+  width: 20px;
+  height: 0.5px;
+  transform-origin: 0% 0%;
+  transition: all 1s;
 }
+
 .stroke1 {
-    transform: rotate(45deg);
+  transform: rotate(45deg);
 }
+
 .stroke2 {
-    transform: scaleX(0);
-    opacity: 0;
+  transform: scaleX(0);
+  opacity: 0;
 }
+
 .stroke3 {
-    transform: rotate(-45deg) translate(-4px, 4px);
+  transform: rotate(-45deg) translate(-4px, 4px);
 }
 
 .input {
-    background-color: #1F1F1F;
-    height: 250px;/*190px*/
-    padding: 5px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    box-sizing: border-box;
-    font-size: 32px;
+  background-color: #1f1f1f;
+  height: 250px;
+  /*190px*/
+  padding: 5px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  box-sizing: border-box;
+  font-size: 32px;
 }
 
 .operator {
-    position: absolute;
-    top: 200px;
-    left: 12px;
-    font-size: 42px;
+  position: absolute;
+  top: 200px;
+  left: 12px;
+  font-size: 42px;
 }
 
 .buttons {
-    display: grid;
-    margin: 2px 2px;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2px;
+  display: grid;
+  margin: 2px 2px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
 }
 
 .button {
-    border: none;
-    background-color: black;
-    height: 80px;
-    display: flex;
-    cursor: pointer;
+  border: none;
+  background-color: black;
+  height: 80px;
+  display: flex;
+  cursor: pointer;
 }
 
 .button span {
-    color: white;
-    margin: auto;
+  color: white;
+  margin: auto;
 }
 
 .button:hover,
 .button.operators:hover {
-    background-color: #343434;
+  background-color: #343434 !important;
 }
 
 .button:active,
 .button.operators:active {
-    background-color: #494949;
+  background-color: #494949;
 }
 
 .button.operators {
-    background-color: #131313;
+  background-color: #131313;
 }
 
 .button.equals {
-    background-color: #134369;
+  background-color: #134369;
 }
 
 .button.equals:hover {
-    background-color: #036FC4;
+  background-color: #036fc4 !important;
 }
 
-button[value="+"]  span {
-    background-color: white;
-    width: 1.5px;
-    height: 15px;
+button[value='+'] span {
+  background-color: white;
+  width: 1.5px;
+  height: 15px;
 }
 
-button[value="+"] span::after {
-    content: '';
-    position: absolute;
-    background-color: white;
-    width: 15px;
-    height: 1.5px;
-    transform: translate(-7.5px, 6.5px);
+button[value='+'] span::after {
+  content: '';
+  position: absolute;
+  background-color: white;
+  width: 15px;
+  height: 1.5px;
+  transform: translate(-7.5px, 6.5px);
 }
 
-button[value="-"] span {
-    background-color: white;
-    width: 15px;
-    height: 1.5px;
+button[value='-'] span {
+  background-color: white;
+  width: 15px;
+  height: 1.5px;
 }
 
-button[value="X"] span {
-    background-color: white;
-    width: 18px;
-    height: 1.5px;
-    transform: rotate(45deg);
+button[value='*'] span {
+  background-color: white;
+  width: 18px;
+  height: 1.5px;
+  transform: rotate(45deg);
 }
 
-button[value="X"] span::after {
-    content: '';
-    position: absolute;
-    background-color: white;
-    width: 18px;
-    height: 1.5px;
-    transform: rotate(-90deg) translate(0, -8.5px);
+button[value='*'] span::after {
+  content: '';
+  position: absolute;
+  background-color: white;
+  width: 18px;
+  height: 1.5px;
+  transform: rotate(-90deg) translate(0, -8.5px);
 }
 
-button[value="/"] span {
-    background-color: white;
-    width: 15px;
-    height: 1.5px;
+button[value='/'] span {
+  background-color: white;
+  width: 15px;
+  height: 1.5px;
 }
 
-button[value="/"] span::before {
-    content: '';
-    position: absolute;
-    background-color: white;
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-    transform: translate(-1px, -6px);
+button[value='/'] span::before {
+  content: '';
+  position: absolute;
+  background-color: white;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  transform: translate(-1px, -6px);
 }
 
-button[value="/"] span::after {
-    content: '';
-    position: absolute;
-    background-color: white;
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-    transform: translate(-1px, 5px);
+button[value='/'] span::after {
+  content: '';
+  position: absolute;
+  background-color: white;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  transform: translate(-1px, 5px);
 }
 
-button[value="="] span {
-    background-color: white;
-    width: 15px;
-    height: 1.5px;
+button[value='='] span {
+  background-color: white;
+  width: 15px;
+  height: 1.5px;
 }
 
-button[value="="] span::after {
-    content: '';
-    position: absolute;
-    background-color: white;
-    width: 15px;
-    height: 1.5px;
-    transform: translate(-7px, 5px);
+button[value='='] span::after {
+  content: '';
+  position: absolute;
+  background-color: white;
+  width: 15px;
+  height: 1.5px;
+  transform: translate(-7px, 5px);
 }
 
-button[value="1"]::after {
-    content: '1';
-    margin: auto;
-    color: white;
-}
-button[value="2"]::after {
-    content: '2';
-    margin: auto;
-    color: white;
-}
-button[value="3"]::after {
-    content: '3';
-    margin: auto;
-    color: white;
-}
-button[value="4"]::after {
-    content: '4';
-    margin: auto;
-    color: white;
-}
-button[value="5"]::after {
-    content: '5';
-    margin: auto;
-    color: white;
-}
-button[value="6"]::after {
-    content: '6';
-    margin: auto;
-    color: white;
-}
-button[value="7"]::after {
-    content: '7';
-    margin: auto;
-    color: white;
-}
-button[value="8"]::after {
-    content: '8';
-    margin: auto;
-    color: white;
-}
-button[value="9"]::after {
-    content: '9';
-    margin: auto;
-    color: white;
-}
-button[value="0"]::after {
-    content: '0';
-    margin: auto;
-    color: white;
+button[value='1']::after {
+  content: '1';
+  margin: auto;
+  color: white;
 }
 
+button[value='2']::after {
+  content: '2';
+  margin: auto;
+  color: white;
+}
 
+button[value='3']::after {
+  content: '3';
+  margin: auto;
+  color: white;
+}
+
+button[value='4']::after {
+  content: '4';
+  margin: auto;
+  color: white;
+}
+
+button[value='5']::after {
+  content: '5';
+  margin: auto;
+  color: white;
+}
+
+button[value='6']::after {
+  content: '6';
+  margin: auto;
+  color: white;
+}
+
+button[value='7']::after {
+  content: '7';
+  margin: auto;
+  color: white;
+}
+
+button[value='8']::after {
+  content: '8';
+  margin: auto;
+  color: white;
+}
+
+button[value='9']::after {
+  content: '9';
+  margin: auto;
+  color: white;
+}
+
+button[value='0']::after {
+  content: '0';
+  margin: auto;
+  color: white;
+}
